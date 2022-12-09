@@ -55,6 +55,8 @@
     <Compile Include="Fuzzy\FuzzyEngine.cs" />
     <Compile Include="Fuzzy\FuzzyRule.cs" />
     <Compile Include="Fuzzy\FuzzyRuleCollection.cs" />
+    <Compile Include="LinguisticVariable\LinguisticVariable.cs" />
+    <Compile Include="LinguisticVariable\LinguisticVariableCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,7 +82,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="LinguisticVariable\" />
     <Folder Include="MembershipFunction\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
