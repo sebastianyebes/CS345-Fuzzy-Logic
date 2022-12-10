@@ -135,16 +135,6 @@ namespace YebesFuzzyLogic
             textBox3.Text = "" + fe.Defuzzify();
         }
 
-        public void computenewspeed()
-        {
-
-            double oldspeed = Convert.ToDouble(textBox1.Text);
-            double oldthrottle = Convert.ToDouble(textBox3.Text);
-            double oldangle = Convert.ToDouble(textBox2.Text);
-            double newspeed = ((1 - 0.1) * (oldspeed)) + (oldthrottle - (0.1 * oldangle));
-            textBox1.Text = "" + newspeed;
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             setFuzzyEngine();
@@ -152,13 +142,6 @@ namespace YebesFuzzyLogic
             textBox3.Text = "" + fe.Defuzzify();
             
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            computenewspeed();
-        }
-
-      
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -171,7 +154,5 @@ namespace YebesFuzzyLogic
             fuziffyvalues();
             defuzzy();
         }
-
-       
     }
 }
