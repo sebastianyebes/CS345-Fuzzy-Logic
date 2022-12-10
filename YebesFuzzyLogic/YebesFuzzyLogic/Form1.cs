@@ -10,7 +10,7 @@ namespace YebesFuzzyLogic
 
         // Input - Distance (m), Angle (degree), Output - Deviation (degree) 
         MembershipFunctionCollection distance, angle, deviation;
-        LinguisticVariable myspeed, myangle, mythrottle;
+        LinguisticVariable myDistance, myAngle, myDeviation;
         FuzzyRuleCollection myrules;
         
 
@@ -28,6 +28,7 @@ namespace YebesFuzzyLogic
             distance.Add(new MembershipFunction("NEAR", 0.1, 0.8, 0.8, 1.5));
             distance.Add(new MembershipFunction("FAR", 0.8, 1.5, 1.5, 2.2));
             distance.Add(new MembershipFunction("VERY FAR", 1.5, 2.2, 2.2, 2.2));
+            myDistance = new LinguisticVariable("DISTANCE", distance);
 
             // Range value of Angle [-90, ..., 0, ..., 90]
             angle = new MembershipFunctionCollection();
@@ -36,6 +37,7 @@ namespace YebesFuzzyLogic
             angle.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
             angle.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
             angle.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
+            myAngle = new LinguisticVariable("ANGLE", angle);
 
             // Range value of Deviation [-90, ..., 0, ..., 90]
             deviation = new MembershipFunctionCollection();
@@ -44,6 +46,7 @@ namespace YebesFuzzyLogic
             deviation.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
             deviation.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
             deviation.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
+            myDeviation = new LinguisticVariable("DEVIATION", deviation);
         }
 
         public void setRules()
@@ -63,9 +66,9 @@ namespace YebesFuzzyLogic
         public void setFuzzyEngine()
         {
             fe = new FuzzyEngine();
-            fe.LinguisticVariableCollection.Add(myspeed);
-            fe.LinguisticVariableCollection.Add(myangle);
-            fe.LinguisticVariableCollection.Add(mythrottle);
+            fe.LinguisticVariableCollection.Add(myDistance);
+            fe.LinguisticVariableCollection.Add(myAngle);
+            fe.LinguisticVariableCollection.Add(myDeviation);
             fe.FuzzyRuleCollection = myrules;
         }
 
@@ -88,31 +91,31 @@ namespace YebesFuzzyLogic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            myspeed.InputValue=(Convert.ToDouble(textBox1.Text));
-            myspeed.Fuzzify("OK");
+            myDistance.InputValue=(Convert.ToDouble(textBox1.Text));
+            myDistance.Fuzzify("NEAR");
             
             
             
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            myangle.InputValue = (Convert.ToDouble(textBox2.Text));
-            myangle.Fuzzify("LEVEL");
+            myAngle.InputValue = (Convert.ToDouble(textBox2.Text));
+            myAngle.Fuzzify("AHEAD LEFT");
             
         }
 
         public void fuziffyvalues()
         {
-            myspeed.InputValue = (Convert.ToDouble(textBox1.Text));
-            myspeed.Fuzzify("LOW");
-            myangle.InputValue = (Convert.ToDouble(textBox2.Text));
-            myangle.Fuzzify("DOWN");
+            myDistance.InputValue = (Convert.ToDouble(textBox1.Text));
+            myDistance.Fuzzify("VERY NEAR");
+            myAngle.InputValue = (Convert.ToDouble(textBox2.Text));
+            myAngle.Fuzzify("LEFT");
         
         }
         public void defuzzy()
         {
             setFuzzyEngine();
-            fe.Consequent = "THROTTLE";
+            fe.Consequent = "DEVIATION";
             textBox3.Text = "" + fe.Defuzzify();
         }
 
@@ -129,7 +132,7 @@ namespace YebesFuzzyLogic
         private void button3_Click(object sender, EventArgs e)
         {
             setFuzzyEngine();
-            fe.Consequent = "THROTTLE";
+            fe.Consequent = "DEVIATION";
             textBox3.Text = "" + fe.Defuzzify();
             
         }
