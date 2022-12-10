@@ -36,6 +36,14 @@ namespace YebesFuzzyLogic
             angle.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
             angle.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
             angle.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
+
+            // Range value of Deviation [-90, ..., 0, ..., 90]
+            deviation = new MembershipFunctionCollection();
+            deviation.Add(new MembershipFunction("LEFT", -90.0, -45.0, -45.0, -45.0));
+            deviation.Add(new MembershipFunction("AHEAD LEFT", -90.0, -45.0, -45.0, 0.0));
+            deviation.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
+            deviation.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
+            deviation.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
         }
 
         public void setRules()
