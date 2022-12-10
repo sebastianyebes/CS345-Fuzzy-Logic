@@ -28,6 +28,14 @@ namespace YebesFuzzyLogic
             distance.Add(new MembershipFunction("NEAR", 0.1, 0.8, 0.8, 1.5));
             distance.Add(new MembershipFunction("FAR", 0.8, 1.5, 1.5, 2.2));
             distance.Add(new MembershipFunction("VERY FAR", 1.5, 2.2, 2.2, 2.2));
+
+            // Range value of Angle [-90, ..., 0, ..., 90]
+            angle = new MembershipFunctionCollection();
+            angle.Add(new MembershipFunction("LEFT", -90.0, -45.0, -45.0, -45.0));
+            angle.Add(new MembershipFunction("AHEAD LEFT", -90.0, -45.0, -45.0, 0.0));
+            angle.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
+            angle.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
+            angle.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
         }
 
         public void setRules()
