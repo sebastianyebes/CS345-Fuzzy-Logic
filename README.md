@@ -37,30 +37,30 @@ Let Angle:
 |  **VFR**           |   A    |   A    |   A    |   A    |   A    |   
 
 ``` 
-FUZZY LINGUISTIC RULE
+𝗙𝗨𝗭𝗭𝗬 𝗟𝗜𝗡𝗚𝗨𝗜𝗦𝗧𝗜𝗖 𝗥𝗨𝗟𝗘
 
-IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS NEAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS FAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS VERY_FAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD
+If (Distance is Very Near) and (Angle is Left) then Deviation is Ahead
+If (Distance is Near) and (Angle is Left) then Deviation is Ahead
+If (Distance is Far) and (Angle is Left) then Deviation is Ahead
+If (Distance is Very Far) and (Angle is Left) then Deviation is Ahead
 
-IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD_RIGHT
-IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD
+If (Distance is Very Near) and (Angle is Ahead Left) then Deviation is Ahead Right
+If (Distance is Near) and (Angle is Ahead Left) then Deviation is Ahead
+If (Distance is Far) and (Angle is Ahead Left) then Deviation is Ahead
+If (Distance is Very Far) and (Angle is Ahead Left) then Deviation is Ahead
 
-IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD_LEFT
-IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS RIGHT
-IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD_RIGHT
-IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD
+If (Distance is Very Near) and (Angle is Ahead) then Deviation is Ahead Left
+If (Distance is Near) and (Angle is Ahead) then Deviation is Right
+If (Distance is Far) and (Angle is Ahead) then Deviation is Ahead Right
+If (Distance is Very Far) and (Angle is Ahead) then Deviation is Ahead
 
-IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD_LEFT
-IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD
+If (Distance is Very Near) and (Angle is Ahead Right) then Deviation is Ahead Left
+If (Distance is Near) and (Angle is Ahead Right) then Deviation is Ahead
+If (Distance is Far) and (Angle is Ahead Right) then Deviation is Ahead
+If (Distance is Very Far) and (Angle is Ahead Right) then Deviation is Ahead
 
-IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS NEAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS FAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD
-IF (DISTANCE IS VERY_FAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD
+If (Distance is Very Near) and (Angle is Right) then Deviation is Ahead
+If (Distance is Near) and (Angle is Right) then Deviation is Ahead
+If (Distance is Far) and (Angle is Right) then Deviation is Ahead
+If (Distance is Very Far) and (Angle is Right) then Deviation is Ahead
 ```
