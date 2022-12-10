@@ -21,8 +21,13 @@ namespace YebesFuzzyLogic
 
     
         public void setMembers()
-        {         
-        
+        {   
+            // Range value of Distance [0.1, ..., 2.2]
+            distance = new MembershipFunctionCollection();
+            distance.Add(new MembershipFunction("VERY NEAR", 0.1, 0.8, 0.8, 0.8));
+            distance.Add(new MembershipFunction("NEAR", 0.1, 0.8, 0.8, 1.5));
+            distance.Add(new MembershipFunction("FAR", 0.8, 1.5, 1.5, 2.2));
+            distance.Add(new MembershipFunction("VERY FAR", 1.5, 2.2, 2.2, 2.2));
         }
 
         public void setRules()
