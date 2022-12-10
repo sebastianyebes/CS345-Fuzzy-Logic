@@ -53,8 +53,30 @@ namespace YebesFuzzyLogic
         {
             // Set Rule Base
             myrules = new FuzzyRuleCollection();
-            myrules.Add(new FuzzyRule("IF (DISTANCE IS HIGH) AND (ANGLE IS UP) THEN THROTTLE IS LM"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS NEAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS FAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_FAR) AND (ANGLE IS LEFT) THEN DEVIATION IS AHEAD"));
 
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD_RIGHT"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD_LEFT) THEN DEVIATION IS AHEAD"));
+
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD_LEFT"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS RIGHT"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD_RIGHT"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD) THEN DEVIATION IS AHEAD"));
+
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD_LEFT"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS NEAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS FAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_FAR) AND (ANGLE IS AHEAD_RIGHT) THEN DEVIATION IS AHEAD"));
+
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_NEAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS NEAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS FAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD"));
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS VERY_FAR) AND (ANGLE IS RIGHT) THEN DEVIATION IS AHEAD"));
         }
 
         public void setFuzzyEngine()
