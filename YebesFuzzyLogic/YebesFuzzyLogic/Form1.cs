@@ -7,7 +7,9 @@ namespace YebesFuzzyLogic
     public partial class Form1 : Form
     {
         FuzzyEngine fe;
-        MembershipFunctionCollection speed,angle,throttle;
+
+        // Input - Distance (m), Angle (degree), Output - Deviation (degree) 
+        MembershipFunctionCollection distance, angle, deviation;
         LinguisticVariable myspeed, myangle, mythrottle;
         FuzzyRuleCollection myrules;
         
@@ -19,30 +21,7 @@ namespace YebesFuzzyLogic
 
     
         public void setMembers()
-        {
-
-            speed = new MembershipFunctionCollection();
-            speed.Add(new MembershipFunction("LOW",0.0,0.0,45.0,50.0));
-            speed.Add(new MembershipFunction("OK", 45.0, 50.0, 50.0, 55.0));
-            speed.Add(new MembershipFunction("HIGH", 50.0, 55.0, 100.0, 100.0));
-            myspeed = new LinguisticVariable("SPEED", speed);
-
-
-            angle = new MembershipFunctionCollection();
-            angle.Add(new MembershipFunction("DOWN", -10.0, -10.0, -5.0, 0.0));
-            angle.Add(new MembershipFunction("LEVEL", -5.0, 1.0, 1.0, 5.0));
-            angle.Add(new MembershipFunction("UP", 0.0, 5.0, 10.0, 10.0));
-            myangle = new LinguisticVariable("ANGLE", angle);
-
-            throttle = new MembershipFunctionCollection();
-            throttle.Add(new MembershipFunction("LOW",0.0,0.0,2.0,4.0));
-            throttle.Add(new MembershipFunction("LM", 2.0, 4.0, 4.0, 6.0));
-            throttle.Add(new MembershipFunction("MED", 4.0, 6.0, 6.0, 8.0));
-            throttle.Add(new MembershipFunction("HM", 6.0, 8.0, 8.0, 10.0));
-            throttle.Add(new MembershipFunction("HIGH", 8.0, 10.0, 10.0, 10.0));
-            mythrottle = new LinguisticVariable("THROTTLE", throttle);
-
-            
+        {         
         
         }
 
