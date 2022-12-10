@@ -116,16 +116,16 @@ namespace YebesFuzzyLogic
         private void button2_Click(object sender, EventArgs e)
         {
             myAngle.InputValue = (Convert.ToDouble(textBox2.Text));
-            myAngle.Fuzzify("AHEAD");
+            myAngle.Fuzzify("AHEAD_LEFT");
             
         }
 
         public void fuziffyvalues()
         {
             myDistance.InputValue = (Convert.ToDouble(textBox1.Text));
-            myDistance.Fuzzify("NEAR");
+            myDistance.Fuzzify("VERY_NEAR");
             myAngle.InputValue = (Convert.ToDouble(textBox2.Text));
-            myAngle.Fuzzify("AHEAD");
+            myAngle.Fuzzify("LEFT");
         
         }
 
