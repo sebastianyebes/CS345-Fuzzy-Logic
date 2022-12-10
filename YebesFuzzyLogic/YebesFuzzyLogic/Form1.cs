@@ -24,43 +24,37 @@ namespace YebesFuzzyLogic
         {   
             // Range value of Distance [0.1, ..., 2.2]
             distance = new MembershipFunctionCollection();
-            distance.Add(new MembershipFunction("VERY NEAR", 0.1, 0.8, 0.8, 0.8));
+            distance.Add(new MembershipFunction("VERY_NEAR", 0.1, 0.8, 0.8, 0.8));
             distance.Add(new MembershipFunction("NEAR", 0.1, 0.8, 0.8, 1.5));
             distance.Add(new MembershipFunction("FAR", 0.8, 1.5, 1.5, 2.2));
-            distance.Add(new MembershipFunction("VERY FAR", 1.5, 2.2, 2.2, 2.2));
+            distance.Add(new MembershipFunction("VERY_FAR", 1.5, 2.2, 2.2, 2.2));
             myDistance = new LinguisticVariable("DISTANCE", distance);
 
             // Range value of Angle [-90, ..., 0, ..., 90]
             angle = new MembershipFunctionCollection();
             angle.Add(new MembershipFunction("LEFT", -90.0, -45.0, -45.0, -45.0));
-            angle.Add(new MembershipFunction("AHEAD LEFT", -90.0, -45.0, -45.0, 0.0));
+            angle.Add(new MembershipFunction("AHEAD_LEFT", -90.0, -45.0, -45.0, 0.0));
             angle.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
-            angle.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
+            angle.Add(new MembershipFunction("AHEAD_RIGHT", 0.0, 45.0, 45.0, 90.0));
             angle.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
             myAngle = new LinguisticVariable("ANGLE", angle);
 
             // Range value of Deviation [-90, ..., 0, ..., 90]
             deviation = new MembershipFunctionCollection();
             deviation.Add(new MembershipFunction("LEFT", -90.0, -45.0, -45.0, -45.0));
-            deviation.Add(new MembershipFunction("AHEAD LEFT", -90.0, -45.0, -45.0, 0.0));
+            deviation.Add(new MembershipFunction("AHEAD_LEFT", -90.0, -45.0, -45.0, 0.0));
             deviation.Add(new MembershipFunction("AHEAD", -45.0, 0.0, 0.0, 45.0));
-            deviation.Add(new MembershipFunction("AHEAD RIGHT", 0.0, 45.0, 45.0, 90.0));
+            deviation.Add(new MembershipFunction("AHEAD_RIGHT", 0.0, 45.0, 45.0, 90.0));
             deviation.Add(new MembershipFunction("RIGHT", 45.0, 90.0, 90.0, 90.0));
             myDeviation = new LinguisticVariable("DEVIATION", deviation);
         }
 
         public void setRules()
         {
-          myrules = new FuzzyRuleCollection();
-          myrules.Add(new FuzzyRule("IF (SPEED IS HIGH) AND (ANGLE IS UP) THEN THROTTLE IS LM"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS HIGH) AND (ANGLE IS LEVEL) THEN THROTTLE IS LM"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS HIGH) AND (ANGLE IS DOWN) THEN THROTTLE IS LOW"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS OK) AND (ANGLE IS UP) THEN THROTTLE IS HM"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS OK) AND (ANGLE IS LEVEL) THEN THROTTLE IS MED"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS OK) AND (ANGLE IS DOWN) THEN THROTTLE IS LM"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS LOW) AND (ANGLE IS UP) THEN THROTTLE IS HIGH"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS OK) AND (ANGLE IS LEVEL) THEN THROTTLE IS HM"));
-          myrules.Add(new FuzzyRule("IF (SPEED IS OK) AND (ANGLE IS DOWN) THEN THROTTLE IS HM"));
+            // Set Rule Base
+            myrules = new FuzzyRuleCollection();
+            myrules.Add(new FuzzyRule("IF (DISTANCE IS HIGH) AND (ANGLE IS UP) THEN THROTTLE IS LM"));
+
         }
 
         public void setFuzzyEngine()
